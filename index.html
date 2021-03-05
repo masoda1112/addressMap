@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="common.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function initMap() {
+            // addressの全住所をスクレイピング
+
+            // スクレイピングした住所を座標に変換
+            
+            // 緯度経度を変数に格納
+            const myLatLng = { lat: 38.709984, lng: 139.810703 };
+            const marker_position_1 = { lat: 38.709984, lng: 139.810703 };
+            const marker_position_2 = { lat: 35.709984, lng: 136.810703 };
+            const marker_position_3 = { lat: 33.709984, lng: 130.810703 };
+            // mapを表示
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 5,
+                center: myLatLng,
+            });
+            // マーカーを表示
+            var marker1 = new google.maps.Marker({
+                position: marker_position_1,
+                map,
+                clickable: true,
+                title: "Hello World!",
+            });
+            var marker2 = new google.maps.Marker({
+                position: marker_position_2,
+                map,
+                clickable: true,
+                title: "Hello",
+            });
+            var marker3 = new google.maps.Marker({
+                position: marker_position_3,
+                map,
+                clickable: true,
+                title: "Hello",
+            });
+        }
+
+    </script>
+    <script>
+    </script>
+        <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeuTnnQ494uWapj_z6mWrV06bryM_tgzw&callback=initMap">
+        </script>
+    <title>addressMap</title>
+</head>
+<body>
+    <h1>addressMap</h1>
+    <div id="map" style="width: 70%; height: 80vh;"></div>
+</body>
+</html>
